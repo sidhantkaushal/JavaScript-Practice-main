@@ -50,6 +50,9 @@ console.log(Arrtest.splice(1,2));
 console.log(`Original Array after splice is : ${Arrtest}`);
 
 
+//
+
+
 
 
 

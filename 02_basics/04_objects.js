@@ -39,11 +39,29 @@ console.log(Object.entries(newRes));
 
 console.log(regularUser.hasOwnProperty("userFullName"));
 
-const product = {
-  name: "golfball",
+//17 Done
+
+const product = [
+{
+  name: "golfball1",
   price: 40,
   type: "sports",
-};
+},
+{
+  name: "golfball2",
+  price: 40,
+  type: "sports",
+},
+{
+  name: "golfball3",
+  price: 40,
+  type: "sports",
+}]
 
-const { name: itemName } = product;
-console.log(itemName);
+product.map((ele)=>{
+  const {price : cost} = ele;
+  console.log(cost);
+  console.log(`Cost of ${ele.name} is ${ele.price}.`);
+})
+
+console.log(product[0].name);

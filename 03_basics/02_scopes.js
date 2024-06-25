@@ -39,4 +39,3 @@ one();
  
 //+++++++++++++ Interesting +++++++++++++
 
-function addOne (num)

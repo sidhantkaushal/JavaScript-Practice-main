@@ -33,12 +33,4 @@ one();
 
 //+++++++++++++ Interesting +++++++++++++
 
-console.log(addOne(10));
-function addOne(nums) {
-  return nums + 1;
-}
-addTwo(10);
-//This is a functional expression and it gives error if it is called before it is initalized.
-const addTwo = function (nums) {
-  return nums + 2;
-};
+function addOne (num)

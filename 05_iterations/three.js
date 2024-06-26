@@ -1,4 +1,4 @@
-// for of 
+// for of : Prefer it for Arrays. 
 
 ["","",""]
 [{},{},{}]
@@ -18,6 +18,7 @@ for (const iterator of greetings) {
 
 
 // MAPS : store information as key value pair.
+
 
 const map = new Map()
 
@@ -41,3 +42,7 @@ for (const [key,value] of map) {
     console.log(`${key} and ${value}`)
     
 }
+
+
+
+

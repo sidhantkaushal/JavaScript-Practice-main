@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(186, 151, 151);">
+    
+</body>
+<script>
+    let para = document.createElement("p");
+    console.log(para);
+    para.style.backgroundColor="red";
+    // div.innerText="Hey I am the texter";
+    para.style.padding="5px";
+    para.setAttribute("class","setAtt");
+    //The set attribute directly add the values to the element.
+    //In other cases it first get the value from the attribute and then changes its value.
+
+     const addText =document.createTextNode("Chai aur code");
+     console.log(`This is done from createTextNode ${addText.nodeValue}`);
+     para.appendChild(addText);
+     document.body.appendChild(para);
+</script>
+</html>

@@ -50,7 +50,7 @@ const addTwo=(num1,num2)=>{
 console.log(addTwo(1,2));
 
 // Implicit return 
-// When we use parantheses we do not have to use return keyword.
+// When we use parantheses we do not have to use return keyword and it returns on its own.
 
 const addThree=(num1,num2,num3)=>(num1+num2+num3);
 console.log(addThree(1,2,3));

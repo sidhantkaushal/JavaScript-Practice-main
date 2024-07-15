@@ -3,9 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CHAI AUR CODE || DOM</title>
 </head>
 <body>
+    <ul class="language">
+        <li class="list-items">Java</li>
+        <li class="list-items">JavaScript</li>
+        <li class="list-items">C</li>
+        <li class="list-items">C++</li>
+        <li class="list-items">Python</li>
+    </ul>
     
 </body>
+<script>
+    function addLanguage(language)
+    {
+        let item = document.createElement("li");
+        let textNode = document.createTextNode(language);
+        item.appendChild(textNode);
+        document.querySelector(".language").appendChild(item);
+    }
+    addLanguage("Swifty");
+
+    function addOptiLanguage(){
+        let li = document.createElement("li");
+        li.appendChild(document.createTextNode(lang));
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("Swifty2");
+
+// Edit an existing element
+
+    const edit_li = document.querySelector("li:nth-child(2)");
+    console.log(edit_li);
+    let li = document.createElement("li");
+    li.style.backgroundColor="red";
+    li.appendChild(document.createTextNode("Edited ele"));
+    edit_li.replaceWith(li);
+
+// Edit -2 
+
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML='<li>Heyy i am outerHTML</li>'
+// Remove an element 
+
+    const lastLang =document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+</script>
 </html>

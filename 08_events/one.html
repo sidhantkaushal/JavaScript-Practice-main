@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop" "></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+   <script>
+    // function checkOnClick(){
+    //     alert("Inline onclick checked");
+    // }
+    // document.getElementById('japan').onclick = function scriptOnClick(){
+    //     alert("Script function onclick");
+    // }
+
+
+     // attachEvent()
+    // jQuery - on
+
+    // type, timestamp, preventDefault
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    document.getElementById("river").addEventListener('click',(e)=>{
+        alert(`${e} addEventListener is called.`);
+    })
+
+    // third parameter in addEventListener
+
+     document.getElementById('images').addEventListener('click',()=>{
+        console.log(`Clicked an image from ul`);
+     })
+
+     document.getElementById('owl').addEventListener('click',(e)=>{
+        console.log(`Clicked the owl image`);
+        e.stopPropagation();
+        // It stops the propagation going further .
+    })
+
+    document.getElementById('google').addEventListener('click',(e)=>{
+        e.preventDefault();
+    })
+
+
+     //Event Bubbling 
+     // In normal case when i click the owl , "Clicked the owl image" will show after that "Clicked an image from ul" will show up.
+     // This is because by default the third parameter of addEventListener is false which signifies to eventBubbling .
+     // Event bubbling means that the flow of code is from innermost element towards outer elements.
+
+     //Event Propagation
+     // In this case the "Clicked an image ul" comes first and "Clicked the owl image" comes after it .
+     // In Event propagation the third parameter of addEventListener is true .
+     // Event propagation means that the flow of execution is from outermost element to innermost element.
+
+
+
+    
+
+   </script>
+</body>
+</html>

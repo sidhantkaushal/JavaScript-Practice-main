@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Async JS</h1>  
+<button id="start">Start</button>  
+<button id="stop">Stop</button>
+</body>
+<script>
+    let ourInterval;
+    const startConsole = (str)=>{
+        console.log(`Interval started`);
+        console.log(`${str} and ${Date.now()}`);
+    }
+
+
+    document.querySelector("#start").addEventListener('click',()=>{
+        console.log(`Start clicked`);
+        if(!ourInterval){
+            ourInterval = setInterval(startConsole,2000,"Heyyy we are on");   
+        }
+    });
+
+    document.querySelector("#stop").addEventListener('click',()=>{
+        clearInterval(ourInterval);
+        ourInterval=null;
+        console.log("We are stopped");
+    })
+
+
+
+</script>
+</html>

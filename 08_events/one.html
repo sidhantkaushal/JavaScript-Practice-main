@@ -18,16 +18,23 @@
         </ul>
    </div>
    <script>
+    // Ways to attach events
+    // 1) Directly to html tag
+    // 2) addEventListener
+
     // function checkOnClick(){
     //     alert("Inline onclick checked");
     // }
+
     // document.getElementById('japan').onclick = function scriptOnClick(){
     //     alert("Script function onclick");
     // }
 
 
      // attachEvent()
-    // jQuery - on
+    // jQuery - on is used for events too .
+
+    //Topics to read 
 
     // type, timestamp, preventDefault
     // target, toElement, srcElement, currentTarget,
@@ -38,6 +45,7 @@
         alert(`${e} addEventListener is called.`);
     })
 
+
     // third parameter in addEventListener
 
      document.getElementById('images').addEventListener('click',()=>{
@@ -46,13 +54,23 @@
 
      document.getElementById('owl').addEventListener('click',(e)=>{
         console.log(`Clicked the owl image`);
-        e.stopPropagation();
-        // It stops the propagation going further .
+        // It stops the propagation going further to elements above in the tree.
     })
+
+    // Event Capture with false as third parameter .
 
     document.getElementById('google').addEventListener('click',(e)=>{
         e.preventDefault();
-    })
+        e.stopPropagation();
+        console.log("Google Clicked");
+
+    },false)
+
+    // Event Propagation is of two types : Event bubble and event capturing .
+
+    // Third parameter is a boolean value :
+    // False : Third parameter is false by default and it means that event bubbling will take place.
+    // True : Event Capturing takes place in this case .
 
 
      //Event Bubbling 
@@ -60,15 +78,21 @@
      // This is because by default the third parameter of addEventListener is false which signifies to eventBubbling .
      // Event bubbling means that the flow of code is from innermost element towards outer elements.
 
-     //Event Propagation
+     //Event Capturing
      // In this case the "Clicked an image ul" comes first and "Clicked the owl image" comes after it .
      // In Event propagation the third parameter of addEventListener is true .
      // Event propagation means that the flow of execution is from outermost element to innermost element.
 
 
 
-    
+    document.querySelector('#images').addEventListener('click',(e)=>{
+        if(e.target.tagName=='IMG'){
+            const removeIt=e.target.parentNode;
+            removeIt.remove();
+        }
+    })
 
+     //   DONE
    </script>
 </body>
 </html>

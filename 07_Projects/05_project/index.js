@@ -1,4 +1,5 @@
-let div=document.getElementById("insert").addEventListener('keydowm',(e)=>{
+let div=document.getElementById("insert")
+window.addEventListener('keydown',(e)=>{
     let ele = `
 <table>
   <tr>
@@ -7,8 +8,8 @@ let div=document.getElementById("insert").addEventListener('keydowm',(e)=>{
     <td>Linus</td>
   </tr>
     <tr>
-    <td>${e.key}</td>
-    <td>${e.keycode}</td>
+    <td>${e.key===" "? "Space":e.key}</td>
+    <td>${e.Code}</td>
     <td>${e.code}</td>
   </tr>
 </table>`

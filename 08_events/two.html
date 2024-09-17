@@ -6,32 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-<h1>Async JS</h1>  
-<button id="start">Start</button>  
-<button id="stop">Stop</button>
-</body>
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
 <script>
-    let ourInterval;
-    const startConsole = (str)=>{
-        console.log(`Interval started`);
-        console.log(`${str} and ${Date.now()}`);
+    const changeText= function(){
+        document.querySelector('h1').innerHTML=`Best Js Series`;
     }
+    let newTimeout= setTimeout(changeText,2000);
 
-
-    document.querySelector("#start").addEventListener('click',()=>{
-        console.log(`Start clicked`);
-        if(!ourInterval){
-            ourInterval = setInterval(startConsole,2000,"Heyyy we are on");   
-        }
-    });
-
-    document.querySelector("#stop").addEventListener('click',()=>{
-        clearInterval(ourInterval);
-        ourInterval=null;
-        console.log("We are stopped");
+    document.querySelector('#stop').addEventListener('click',(e)=>{
+        clearInterval(newTimeout);
+        console.log("Timeout Stopped");
+        
     })
-
-
-
-</script>
+</script>   
+</body>
 </html>

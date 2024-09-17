@@ -56,7 +56,7 @@
         console.log(`Clicked the owl image`);
         // It stops the propagation going further to elements above in the tree.
     })
-
+    e.stopPropagation();    
     // Event Capture with false as third parameter .
 
     document.getElementById('google').addEventListener('click',(e)=>{

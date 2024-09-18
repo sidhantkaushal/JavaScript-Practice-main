@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="bt">Click me</button> 
+</body>
+<script>
+    let flag=true;
+
+
+    document.querySelector('#bt').addEventListener('click',()=>{
+    if(flag){
+        let requestUrl="https://api.github.com/users/sidhantkaushal";
+    let xhr= new XMLHttpRequest();
+    xhr.open('GET',requestUrl);
+    xhr.onreadystatechange = function (){
+        if(xhr.readyState===4)
+        {
+            const data = JSON.parse(this.responseText);
+            console.log(data);
+            const imageUrl=data.avatar_url;
+            const followerCount=data.followers;
+          
+
+            // Function to create and append the card to the body
+            function createCard(imageUrl, followerCount) 
+            {
+                // Create the card element
+                const card = document.createElement('div');
+                card.style.width = '200px';
+                card.style.border = '1px solid #ccc';
+                card.style.borderRadius = '10px';
+                card.style.overflow = 'hidden';
+                card.style.textAlign = 'center';
+                card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                card.style.margin = '20px auto';
+
+                // Create the image element
+                const img = document.createElement('img');
+                img.src = imageUrl;
+                img.alt = 'Profile Image';
+                img.style.width = '100%';
+                img.style.height = 'auto';
+                img.style.padding='10 10 10 10';
+
+                // Create the follower count element
+                const followerText = document.createElement('p');
+                followerText.textContent = `${followerCount} Followers`;
+                followerText.style.margin = '10px 0';
+                followerText.style.fontSize = '16px';
+                followerText.style.fontWeight = 'bold';
+
+                // Append the image and follower text to the card
+                card.appendChild(img);
+                card.appendChild(followerText);
+
+                // Append the card to the body
+                document.body.appendChild(card);
+                flag=false;
+            }
+
+        // Example usage
+        createCard(imageUrl, followerCount);
+
+                }
+    }
+    xhr.send();
+
+    }
+        
+    }
+   )
+
+</script>
+</html>

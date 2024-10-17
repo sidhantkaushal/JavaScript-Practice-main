@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closure</title>
+</head>
+<body>
+    <button id="orange">orange</button>
+    <button id="green">Green</button>
+    
+</body>
+<script>
+    function clickHandler(color){
+        console.log(color);
+        
+        function changeColor(){
+            document.body.style.backgroundColor=`${color}`;
+        }
+        return changeColor;
+    }
+    document.getElementById("green").onclick = clickHandler("green");
+    document.getElementById("orange").onclick = clickHandler("orange");
+
+</script>
+</html>
